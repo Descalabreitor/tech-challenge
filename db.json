@@ -1,0 +1,43 @@
+{
+    "companies": [
+      { "id": 1, "name": "Company A", "location": "New York" },
+      { "id": 2, "name": "Company B", "location": "San Francisco" },
+      { "id": 3, "name": "Company C", "location": "Los Angeles" },
+      { "id": 4, "name": "Company D", "location": "Chicago" },
+      { "id": 5, "name": "Company E", "location": "Seattle" },
+      { "id": 6, "name": "Company F", "location": "Boston" },
+      { "id": 7, "name": "Company G", "location": "Austin" }
+    ],
+    "users": [
+      { "id": 1, "name": "John Doe", "companyId": 1 },
+      { "id": 2, "name": "Jane Smith", "companyId": 2 },
+      { "id": 3, "name": "Alice Johnson", "companyId": 3 },
+      { "id": 4, "name": "Bob Brown", "companyId": 3 },
+      { "id": 5, "name": "Charlie Davis", "companyId": 3 },
+      { "id": 6, "name": "Diana Evans", "companyId": 4 },
+      { "id": 7, "name": "Ethan Wilson", "companyId": 4 },
+      { "id": 8, "name": "George Harris", "companyId": 4 },
+      { "id": 9, "name": "Hannah Clark", "companyId": 4 },
+      { "id": 10, "name": "Irene Lee", "companyId": 5 },
+      { "id": 11, "name": "Jack Miller", "companyId": 5 },
+      { "id": 12, "name": "Karen Walker", "companyId": 5 },
+      { "id": 13, "name": "Liam Young", "companyId": 6 },
+      { "id": 14, "name": "Mia King", "companyId": 6 },
+      { "id": 15, "name": "Noah Perez", "companyId": 6 },
+      { "id": 16, "name": "Olivia Thompson", "companyId": 6 },
+      { "id": 17, "name": "Paul Anderson", "companyId": 6 },
+      { "id": 18, "name": "Quinn Martinez", "companyId": 7 },
+      { "id": 19, "name": "Rachel Moore", "companyId": 7 },
+      { "id": 20, "name": "Samuel Taylor", "companyId": 7 },
+      { "id": 21, "name": "Tina Lewis", "companyId": 7 },
+      { "id": 22, "name": "Ursula White", "companyId": 7 },
+      { "id": 23, "name": "Chris Green", "companyId": 1 },
+      { "id": 24, "name": "Sarah Adams", "companyId": 1 },
+      { "id": 25, "name": "Tom Baker", "companyId": 1 },
+      { "id": 26, "name": "Emma Wilson", "companyId": 2 },
+      { "id": 27, "name": "James Carter", "companyId": 2 },
+      { "id": 28, "name": "Sophia Turner", "companyId": 2 },
+      { "id": 29, "name": "David King", "companyId": 1 }
+    ]
+  }
+  
