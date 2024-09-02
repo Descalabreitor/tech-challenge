@@ -8,14 +8,11 @@ interface Props {
 }
 
 export function CompaniesContextProvider({children}: Props) {
-    const [companies, setCompanies] = useState<Array<Company>>([]);
+    const [Companies, SetCompanies] = useState<Array<Company>>([]);
 
-    const handle = (value: Array<Company>) => {
-        setCompanies(value);
-    };
 
     return (
-        <CompanyContext.Provider value={{CompaniesContext: companies, SetCompaniesContext: handle}}>
+        <CompanyContext.Provider value={{Companies, SetCompanies}}>
             {children}    
         </CompanyContext.Provider>
     )

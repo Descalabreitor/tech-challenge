@@ -7,6 +7,6 @@ export interface Company {
 };
 
 export type CompanyContextType = {
-    CompaniesContext: Array<Company>;
-    SetCompaniesContext: (value: Array<Company>) => void;
+    Companies: Array<Company>;
+    SetCompanies: (value: Array<Company>) => void;
 };

@@ -5,9 +5,7 @@ import { getAllCompanies } from '../services/companiesApi';
 import CompanyContext from '../context/CompaniesContext';
 
 const CompanyTable: React.FC = () => {
-    const context = useContext(CompanyContext)
-    console.log(context)
-    const { CompaniesContext, SetCompaniesContext } = useContext(CompanyContext);
+    const { Companies, SetCompanies} = useContext(CompanyContext);
 
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -15,8 +13,7 @@ const CompanyTable: React.FC = () => {
         const fetchCompanies = async () => {
             try {
                 const data = await getAllCompanies();
-                console.log(CompanyContext)
-                SetCompaniesContext(data);
+                SetCompanies(data);
             } catch (error) {
                 console.error("Error fetching companies", error);
             } finally {
@@ -25,18 +22,19 @@ const CompanyTable: React.FC = () => {
         };
 
         fetchCompanies();
-    }, [SetCompaniesContext]);
+    }, [SetCompanies]);
 
     return (
         <div>
-            <h3>Companies List</h3>
-            <DataTable value={CompaniesContext} loading={loading} paginator rows={10} responsiveLayout="scroll">
-                <Column field="id" header="ID" sortable></Column>
-                <Column field="name" header="Name" sortable></Column>
-                <Column field="location" header="Location" sortable></Column>
-                <Column field="business_area" header="Business Area" sortable></Column>
-                <Column field="company_size" header="Company Size" sortable></Column>
-            </DataTable>
+            <ul>
+                <h3>Companies</h3>
+                <DataTable value={Companies} loading={loading} paginator rows={10}>
+                    <Column field="name" header="Name" sortable></Column>
+                    <Column field="location" header="Location" sortable></Column>
+                    <Column field="business_area" header="Business Area" sortable></Column>
+                    <Column field="company_size" header="Company Size" sortable></Column>
+                </DataTable>
+            </ul>
         </div>
     );
 };

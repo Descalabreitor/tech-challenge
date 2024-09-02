@@ -5,7 +5,7 @@ import CompanyContext from "../context/CompaniesContext";
 
 
 export async function LoadAllCompanies() {
-    const {CompaniesContext, setCompaniesContext} = useContext(
+    const {Companies: CompaniesContext, setCompaniesContext} = useContext(
         CompanyContext
     ) as CompanyContextType;    
 
