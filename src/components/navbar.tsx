@@ -1,25 +1,41 @@
 import { Menubar } from 'primereact/menubar'
+import "primeicons/primeicons.css"
+import { useNavigate } from 'react-router-dom';
 
-export default function Navbar() {
+function Navbar() {
+    const navigate = useNavigate();
+
     const items = [
         {
-            label: 'home',
-            icon: 'pi pi-home'
+            label: 'Home',
+            icon: 'pi pi-home',
+            command: () => navigate("/")
         },
         {
             label: 'Companies',
-            icon: 'pi pi-building'
+            icon: 'pi pi-building',
+            command: () => navigate("/companies")
+            
         },
         {
             label: 'Users',
-            icon: 'pi-users'
+            icon: 'pi pi-users',
+            command: () => navigate("/users")
         }
 
     ];
 
     return (
-        <div className="card">
-            <Menubar model={items}/>
+        <div>
+            <header>
+                <nav>
+                    <ul>
+                        <Menubar model={items}/>
+                    </ul>
+                </nav>
+            </header>
         </div>
     )
 }
+
+export default Navbar;

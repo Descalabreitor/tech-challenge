@@ -1,18 +1,22 @@
-import React from 'react'
-
-
-
-import Navbar from './components/navbar';
+import { BrowserRouter, Route, Routes, } from 'react-router-dom';
+import CompaniesPage from './pages/CompaniesPage';
+import UsersPage from './pages/UsersPage';
+import HomePage from './pages/HomePage';
 
 function App() {
 
   return (
 
   <div>
-    <div className='header'>
-      <Navbar/>
+    <div className='app'>
+      <BrowserRouter>
+        <Routes>
+            <Route path='/companies' element={<CompaniesPage/>}/>
+            <Route path='/users' element={<UsersPage/>}/>
+            <Route path="/" element = {<HomePage />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
-    <div> <h1>PINGA</h1></div>
   </div>
   )
 }
