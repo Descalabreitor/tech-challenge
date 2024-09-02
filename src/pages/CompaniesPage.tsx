@@ -1,3 +1,4 @@
+import CompanyTable from '../components/CompanyTable';
 import Navbar from '../components/Navbar';
 
 
@@ -8,7 +9,7 @@ function CompaniesPage () {
     <div className='Companies'>
       <Navbar/>
     </div>
-    <div> <h1>Companies</h1></div>
+    <div> <CompanyTable/></div>
   </div>
   )
 }

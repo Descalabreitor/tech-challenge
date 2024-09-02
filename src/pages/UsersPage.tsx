@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import UserTable from '../components/UserTable';
 
 
 
@@ -9,7 +10,7 @@ function UsersPage() {
     <div className='Users'>
       <Navbar/>
     </div>
-    <div> <h1>Users</h1> </div>
+    <div> <UserTable/> </div>
   </div>
   )
 }
