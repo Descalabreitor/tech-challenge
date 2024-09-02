@@ -1,7 +1,7 @@
 import { apiRequest } from "./apiClient";
 import { User } from '../types/User';
 
-export const getUsers = async(): Promise<User[]> => {
+export const getAllUsers = async(): Promise<User[]> => {
     return apiRequest('/users', 'get')
 }
 

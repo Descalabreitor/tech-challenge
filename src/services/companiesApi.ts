@@ -1,7 +1,7 @@
 import { apiRequest } from "./apiClient";
 import { Company } from '../types/Company';
 
-export const getCompany = async(): Promise<Company[]> => {
+export const getAllCompanies = async(): Promise<Company[]> => {
     return apiRequest('/companies', 'get')
 }
 
