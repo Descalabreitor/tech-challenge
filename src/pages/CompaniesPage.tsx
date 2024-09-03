@@ -8,6 +8,7 @@ function CompaniesPage () {
     <div className='Companies'>
       <Navbar/>
     </div>
+    
     <div> <CompanyTable/></div>
   </div>
   )

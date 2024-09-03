@@ -33,7 +33,7 @@ const DataLoader: React.FC = () => {
         };
 
         fetchUsers();
-    }, [SetUsers]);
+    }, [Companies, SetUsers]);
 
     return null;
 };

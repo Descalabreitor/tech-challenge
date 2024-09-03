@@ -6,17 +6,19 @@ import { Company } from '../../types/Company';
 import ShowUsersButton from '../buttons/ShowUsersButton';
 import CompanyUsersVirtualScroller from './CompanyUsersVirtScroller';
 import { OverlayPanel } from 'primereact/overlaypanel';
+import { ContextMenu } from 'primereact/contextmenu';
+import CompanyOperationsMenu from '../OperationsMenus/CompanyOperationsMenu';
 
 const CompanyTable: React.FC = () => {
     const { Companies } = useContext(CompanyContext);
-    const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
+    const [selectedCompany, setSelectedCompany] = useState<Company>();
 
-    const op = useRef<OverlayPanel>(null); // Referencia para el OverlayPanel
-
+    const companyUsersOverlay = useRef<OverlayPanel>(null); // Referencia para el OverlayPanel
+    const operationsMenu = useRef<ContextMenu>();
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>, item: Company) => {
         setSelectedCompany(item);
-        op.current?.toggle(event); // Mostrar el OverlayPanel al hacer clic
+        companyUsersOverlay.current?.toggle(event); // Mostrar el OverlayPanel al hacer clic
     };
 
     const actionBodyTemplate = (rowData: Company) => {
@@ -26,9 +28,17 @@ const CompanyTable: React.FC = () => {
     };
 
     return (
-        <div>
+        <ul>
             <h3>Companies</h3>
-            <DataTable value={Companies}  paginator rows={10} selectionMode="single">
+
+            <CompanyOperationsMenu
+                ref={operationsMenu}
+                selectedItem={selectedCompany}
+            />
+
+            <DataTable value={Companies}  paginator rows={10} selectionMode="single"
+            contextMenuSelection = {selectedCompany} onContextMenuSelectionChange={(e) => setSelectedCompany(e.value as Company)} 
+            onContextMenu={(e) => operationsMenu.current?.show(e.originalEvent)}>
                 <Column field="name" header="Name" sortable></Column>
                 <Column field="location" header="Location" sortable></Column>
                 <Column field="business_area" header="Business Area" sortable></Column>
@@ -36,7 +46,7 @@ const CompanyTable: React.FC = () => {
                 <Column body={actionBodyTemplate} header="Show company users" />
             </DataTable>
 
-            <OverlayPanel ref={op} showCloseIcon id="overlay_panel">
+            <OverlayPanel ref={companyUsersOverlay} showCloseIcon id="overlay_panel">
                 {selectedCompany && (
                     <div style={{ padding: '10px' }}>
                         <h4>Users of {selectedCompany.name}</h4>
@@ -44,7 +54,7 @@ const CompanyTable: React.FC = () => {
                     </div>
                 )}
             </OverlayPanel>
-        </div>
+        </ul>
     );
 };
 
