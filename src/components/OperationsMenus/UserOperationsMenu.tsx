@@ -6,12 +6,10 @@ import { Button } from 'primereact/button';
 import { User } from '../../types/User';
 
 interface ContextMenuCrudProps {
-    selectedItem: User | null;
-    updateData: (newData: User) => void;
-    deleteData: (item: User) => void;
+    selectedItem: User | undefined;
 }
 
-const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(({ selectedItem, updateData, deleteData }, ref) => {
+const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(({ selectedItem }, ref) => {
     const [editDialog, setEditDialog] = useState(false);
     const [deleteDialog, setDeleteDialog] = useState(false);
     const [newData, setNewData] = useState<User>({ id: 0, name: '', company: '', companyId: 0, position: '', contact_email: '' });
@@ -32,14 +30,12 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(({ selectedItem, u
 
     // Guardar cambios
     const saveData = () => {
-        updateData(newData);
         setEditDialog(false);
     };
 
     // Confirmar eliminación
     const confirmDelete = () => {
         if (selectedItem) {
-            deleteData(selectedItem);
             setDeleteDialog(false);
         }
     };
