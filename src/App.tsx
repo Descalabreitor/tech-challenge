@@ -2,11 +2,14 @@ import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 import CompaniesPage from './pages/CompaniesPage';
 import UsersPage from './pages/UsersPage';
 import HomePage from './pages/HomePage';
+import { UserContextProvider } from './context/UsersContext';
+import { CompaniesContextProvider } from './context/CompaniesContext';
 
 function App() {
 
   return (
-
+  <UserContextProvider>
+  <CompaniesContextProvider>
   <div>
     <div className='app'>
       <BrowserRouter>
@@ -18,6 +21,8 @@ function App() {
       </BrowserRouter>
     </div>
   </div>
+  </CompaniesContextProvider>
+  </UserContextProvider>
   )
 }
 

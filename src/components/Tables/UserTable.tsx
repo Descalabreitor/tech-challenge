@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { getAllUsers } from '../services/usersApi';
-import { User } from '../types/User';
-import { getAllCompanies } from '../services/companiesApi';
-import UserContext from '../context/UsersContext';
-import { Company } from '../types/Company';
+import { getAllUsers } from '../../services/usersApi';
+import { User } from '../../types/User';
+import { getAllCompanies } from '../../services/companiesApi';
+import UserContext from '../../context/UsersContext';
+import { Company } from '../../types/Company';
 
 function assignCompanyNames(users: User[], companies: Company[]): User[] {
     // Crear un mapa para que la búsqueda sea más eficiente
@@ -42,7 +42,7 @@ const CompanyTable: React.FC = () => {
         };
 
         fetchCompanies();
-    }, []);
+    }, [SetUsers]);
 
     return (
         <ul>

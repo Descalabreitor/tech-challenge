@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CompaniesPage from "../pages/CompaniesPage";
-import UsersPage from "../pages/UsersPage";
-import App from "../App";
+import CompaniesPage from "../../pages/CompaniesPage";
+import UsersPage from "../../pages/UsersPage";
+import App from "../../App";
 
 
 function NavigationProvider(){
