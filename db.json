@@ -1,16 +1,9 @@
 {
   "companies": [
     {
-      "id": "1",
-      "name": "Tech Solutions Ltd.",
-      "location": "London",
-      "business_area": "software",
-      "company_size": "large"
-    },
-    {
       "id": "2",
       "name": "Berlin Real Estate GmbH",
-      "location": "Berlin",
+      "location": "Dresden",
       "business_area": "real estate",
       "company_size": "medium"
     },
@@ -44,7 +37,7 @@
     },
     {
       "id": "7",
-      "name": "Roma Energy Solutions",
+      "name": "Roma Energy Solutions SL",
       "location": "Rome",
       "business_area": "energy",
       "company_size": "medium"
@@ -75,17 +68,10 @@
     {
       "id": "1",
       "name": "Oliver Pinga",
-      "companyId": "1",
+      "companyId": null,
       "position": "Developer",
       "contact_email": "oliver.smith@techsolutions.com",
       "company": "Tech Solutions Ltd."
-    },
-    {
-      "id": "2",
-      "name": "Emma Müller",
-      "companyId": 2,
-      "position": "Manager",
-      "contact_email": "emma.mueller@berlinrealestate.de"
     },
     {
       "id": "3",
@@ -272,7 +258,7 @@
     {
       "id": "32",
       "name": "Emil AASDSA",
-      "companyId": "1",
+      "companyId": null,
       "position": "Oil Analyst",
       "contact_email": "emil.larsen@nordicoil.no",
       "company": "Tech Solutions Ltd."
@@ -332,6 +318,14 @@
       "companyId": 10,
       "position": "Lab Technician",
       "contact_email": "viktor.pedersen@copenhagenhealth.dk"
+    },
+    {
+      "id": 36,
+      "name": "A",
+      "company": "Madrid Finance Corp.",
+      "companyId": "4",
+      "position": "A",
+      "contact_email": "pinga.hotmail"
     }
   ]
 }
