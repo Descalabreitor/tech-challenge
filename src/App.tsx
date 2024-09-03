@@ -4,12 +4,14 @@ import UsersPage from './pages/UsersPage';
 import HomePage from './pages/HomePage';
 import { UserContextProvider } from './context/UsersContext';
 import { CompaniesContextProvider } from './context/CompaniesContext';
+import DataLoader from './services/DataLoader';
 
 function App() {
 
   return (
   <UserContextProvider>
   <CompaniesContextProvider>
+  <DataLoader/>
   <div>
     <div className='app'>
       <BrowserRouter>
