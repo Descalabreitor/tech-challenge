@@ -66,7 +66,7 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(({ selectedItem },
             <ContextMenu model={menuItems} ref={cmRef} />
 
             {/* Diálogo de creación/modificación */}
-            <Dialog visible={editDialog} style={{ width: '400px' }} header="Edit Company" modal className="p-fluid" onHide={() => setEditDialog(false)}>
+            <Dialog visible={editDialog} style={{ width: '400px' }} header="Company data" modal className="p-fluid" onHide={() => setEditDialog(false)}>
                 <div className="p-field">
                     <label htmlFor="name">Name</label>
                     <InputText id="name" value={newData.name} onChange={(e) => setNewData({ ...newData, name: e.target.value })} />
