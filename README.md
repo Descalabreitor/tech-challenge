@@ -36,9 +36,7 @@ Before you begin, ensure you have the following installed:
 
 The project includes several npm scripts you can use during development:
 
-- **`npm run dev`** or **`yarn dev`**: Starts the development server with Vite. Open your browser and go to `http://localhost:5173` to see the application in action.
-
-- **`npm run lint`** or **`yarn lint`**: Runs the ESLint linter to check for style issues and code errors.
+- **`npm run dev`** or **`yarn dev`**: Starts the development server. Open your browser and go to `http://localhost:5173` to see the application in action.
 
 - **`npm run mock-server`** or **`yarn mock-server`**: Starts a mock server on port 5000 using `json-server`. Ensure you have a `db.json` file in the root of the project for it to work.
 
