@@ -5,23 +5,47 @@ import UserContext from "../../context/UsersContext";
 import { ContextMenu } from "primereact/contextmenu";
 import UserOperationsMenu from "../OperationsMenus/UserOperationsMenu";
 import { User } from "../../types/User";
+import { InputText } from "primereact/inputtext";
 
-const CompanyTable: React.FC = () => {
+const UserTable: React.FC = () => {
   const { Users } = useContext(UserContext);
   const [selectedUser, setSelectedUser] = useState<User>();
   const operationsMenu = useRef<ContextMenu>();
 
+  const [globalFilter, setGlobalFilter] = useState(null);
+
+  const header = (
+    <div
+      className="flex align-items-center justify-content-between"
+      style={{ marginBottom: "10px" }}
+    >
+      <span className="text-xl text-900 font-bold">Users</span>
+      <div className="p-inputgroup" style={{ width: "400px" }}>
+        <span className="p-inputgroup-addon">
+          <i className="pi pi-search" />
+        </span>
+        <InputText
+          type="search"
+          placeholder="Search"
+          onInput={(e) => {
+            setGlobalFilter(e.target.value);
+          }}
+        />
+      </div>
+    </div>
+  );
+
   return (
     <ul>
-      <h3>Users</h3>
-
       <UserOperationsMenu ref={operationsMenu} selectedItem={selectedUser} />
 
       <DataTable
         value={Users}
         paginator
         rows={12}
+        header={header}
         selectionMode="single"
+        globalFilter={globalFilter}
         contextMenuSelection={selectedUser}
         onContextMenuSelectionChange={(e) => setSelectedUser(e.value as User)}
         onContextMenu={(e) => operationsMenu.current?.show(e.originalEvent)}
@@ -37,4 +61,4 @@ const CompanyTable: React.FC = () => {
   );
 };
 
-export default CompanyTable;
+export default UserTable;

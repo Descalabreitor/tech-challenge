@@ -21,19 +21,20 @@ const CompanyUsersVirtualScroller: React.FC<
   const CompanyUsers = filterCompanyUsers(companyId, Users);
   console.log(CompanyUsers);
   return (
-    <VirtualScroller
-      items={CompanyUsers}
-      itemTemplate={(user: User) => (
-        <div>
+    <div className="card flex justify-content-center">
+      <VirtualScroller
+        items={CompanyUsers}
+        itemTemplate={(user: User) => (
           <div>
-            <strong>{user.name}</strong>
+            <div>
+              <strong>{user.name}</strong>
+            </div>
           </div>
-        </div>
-      )}
-      itemSize={50}
-      className="border-1 surface-border border-round"
-      style={{ width: "200px", height: "200px" }}
-    />
+        )}
+        itemSize={50}
+        style={{ width: "200px", height: "200px" }}
+      />
+    </div>
   );
 };
 

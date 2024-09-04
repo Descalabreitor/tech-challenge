@@ -8,10 +8,12 @@ import CompanyUsersVirtualScroller from "./CompanyUsersVirtScroller";
 import { OverlayPanel } from "primereact/overlaypanel";
 import { ContextMenu } from "primereact/contextmenu";
 import CompanyOperationsMenu from "../OperationsMenus/CompanyOperationsMenu";
+import { InputText } from "primereact/inputtext";
 
 const CompanyTable: React.FC = () => {
   const { Companies } = useContext(CompanyContext);
   const [selectedCompany, setSelectedCompany] = useState<Company>();
+  const [globalFilter, setGlobalFilter] = useState(null);
 
   const companyUsersOverlay = useRef<OverlayPanel>(null); // Referencia para el OverlayPanel
   const operationsMenu = useRef<ContextMenu>();
@@ -34,10 +36,29 @@ const CompanyTable: React.FC = () => {
     );
   };
 
+  const header = (
+    <div
+      className="flex align-items-center justify-content-between"
+      style={{ marginBottom: "10px" }}
+    >
+      <span className="text-xl text-900 font-bold">Companies</span>
+      <div className="p-inputgroup" style={{ width: "400px" }}>
+        <span className="p-inputgroup-addon">
+          <i className="pi pi-search" />
+        </span>
+        <InputText
+          type="search"
+          placeholder="Search"
+          onInput={(e) => {
+            setGlobalFilter(e.target.value);
+          }}
+        />
+      </div>
+    </div>
+  );
+
   return (
     <ul>
-      <h3>Companies</h3>
-
       <CompanyOperationsMenu
         ref={operationsMenu}
         selectedItem={selectedCompany}
@@ -47,6 +68,8 @@ const CompanyTable: React.FC = () => {
         value={Companies}
         paginator
         rows={10}
+        header={header}
+        globalFilter={globalFilter}
         selectionMode="single"
         contextMenuSelection={selectedCompany}
         onContextMenuSelectionChange={(e) =>

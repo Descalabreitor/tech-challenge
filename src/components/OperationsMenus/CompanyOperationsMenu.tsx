@@ -56,7 +56,7 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
     };
 
     const addData = (newCompany: Company) => {
-      newCompany.id = Companies.length;
+      newCompany.id = Companies[Companies.length - 1].id + 1;
       console.log(newCompany);
       SetCompanies([...Companies, newCompany]);
       createCompanyDB(newCompany);
@@ -176,7 +176,7 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
               checkmark={true}
             />
           </div>
-          <Button label="Save" icon="pi pi-check" onClick={saveData}/>
+          <Button label="Save" icon="pi pi-check" onClick={saveData} />
         </Dialog>
 
         {/* Diálogo de confirmación de eliminación */}

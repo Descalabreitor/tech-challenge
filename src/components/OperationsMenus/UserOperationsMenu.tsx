@@ -68,13 +68,12 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
     };
 
     const addData = (newUser: User) => {
-      newUser.id = Users.length;
+      newUser.id = Users[Users.length - 1].id + 1;
       newUser.companyId = assignCompanyId(newUser.company);
       console.log(newUser);
       SetUsers([...Users, newUser]);
       createUserDB(newUser);
     };
-
 
     const saveData = () => {
       console.log("Wow", newData.id);
@@ -86,7 +85,6 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
       setEditDialog(false);
     };
 
-
     const confirmDelete = () => {
       const filteredUsers = Users.filter((user) => user.id !== selectedItem.id);
       SetUsers(filteredUsers);
@@ -96,7 +94,6 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
         setDeleteDialog(false);
       }
     };
-
 
     const menuItems = [
       {
@@ -138,7 +135,7 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
           className="p-fluid"
           onHide={() => setEditDialog(false)}
         >
-          <div className="p-field" style={{marginBottom: "20px"}}>
+          <div className="p-field" style={{ marginBottom: "20px" }}>
             <label htmlFor="name">Name</label>
             <InputText
               id="name"
@@ -146,15 +143,15 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
               onChange={(e) => setNewData({ ...newData, name: e.target.value })}
             />
           </div>
-          <div className="p-field" style={{marginBottom: "20px"}}>
+          <div className="p-field" style={{ marginBottom: "20px" }}>
             <label htmlFor="company">Company</label>
             <Dropdown
               id="company"
-              value={newData.companyId} 
+              value={newData.companyId}
               options={Companies.map((company) => ({
                 label: company.name,
                 value: company.id,
-              }))} 
+              }))}
               onChange={(e) => {
                 const selectedCompany = Companies.find(
                   (company) => company.id === e.value
@@ -162,8 +159,8 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
                 if (selectedCompany) {
                   setNewData({
                     ...newData,
-                    company: selectedCompany.name, 
-                    companyId: selectedCompany.id, 
+                    company: selectedCompany.name,
+                    companyId: selectedCompany.id,
                   });
                 }
               }}
@@ -171,7 +168,7 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
               checkmark={true}
             />
           </div>
-          <div className="p-field" style={{marginBottom: "20px"}}>
+          <div className="p-field" style={{ marginBottom: "20px" }}>
             <label htmlFor="position">Position</label>
             <InputText
               id="position"
@@ -181,7 +178,7 @@ const ContextMenuCrud = forwardRef<any, ContextMenuCrudProps>(
               }
             />
           </div>
-          <div className="p-field" style={{marginBottom: "20px"}}>
+          <div className="p-field" style={{ marginBottom: "20px" }}>
             <label htmlFor="contact_email">Email</label>
             <InputText
               id="contact_email"

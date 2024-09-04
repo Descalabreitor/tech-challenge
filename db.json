@@ -1,9 +1,16 @@
 {
   "companies": [
     {
+      "id": "1",
+      "name": "Tech Solutions Ltd.",
+      "location": "London",
+      "business_area": "software",
+      "company_size": "large"
+    },
+    {
       "id": "2",
       "name": "Berlin Real Estate GmbH",
-      "location": "Dresden",
+      "location": "Berlin",
       "business_area": "real estate",
       "company_size": "medium"
     },
@@ -37,7 +44,7 @@
     },
     {
       "id": "7",
-      "name": "Roma Energy Solutions SL",
+      "name": "Roma Energy Solutions",
       "location": "Rome",
       "business_area": "energy",
       "company_size": "medium"
@@ -62,16 +69,29 @@
       "location": "Copenhagen",
       "business_area": "healthcare",
       "company_size": "medium"
+    },
+    {
+      "id": "101",
+      "name": "Test",
+      "location": "Test",
+      "business_area": "Test",
+      "company_size": "small"
     }
   ],
   "users": [
     {
       "id": "1",
-      "name": "Oliver Pinga",
-      "companyId": null,
+      "name": "Oliver Smith",
+      "companyId": 1,
       "position": "Developer",
-      "contact_email": "oliver.smith@techsolutions.com",
-      "company": "Tech Solutions Ltd."
+      "contact_email": "oliver.smith@techsolutions.com"
+    },
+    {
+      "id": "2",
+      "name": "Emma Müller",
+      "companyId": 2,
+      "position": "Manager",
+      "contact_email": "emma.mueller@berlinrealestate.de"
     },
     {
       "id": "3",
@@ -86,6 +106,13 @@
       "companyId": 3,
       "position": "Developer",
       "contact_email": "sophie.laurent@parismediagroup.fr"
+    },
+    {
+      "id": "5",
+      "name": "Tom Martin",
+      "companyId": 3,
+      "position": "Marketing",
+      "contact_email": "tom.martin@parismediagroup.fr"
     },
     {
       "id": "6",
@@ -114,6 +141,13 @@
       "companyId": 4,
       "position": "Lawyer",
       "contact_email": "lucas.romero@madridfinance.com"
+    },
+    {
+      "id": "10",
+      "name": "Anna Janssen",
+      "companyId": 5,
+      "position": "Developer",
+      "contact_email": "anna.janssen@amsterdamtech.nl"
     },
     {
       "id": "11",
@@ -184,6 +218,13 @@
       "companyId": 7,
       "position": "Project Manager",
       "contact_email": "alessandro.ferrari@romaenergy.it"
+    },
+    {
+      "id": "21",
+      "name": "Chiara Esposito",
+      "companyId": 7,
+      "position": "Technician",
+      "contact_email": "chiara.esposito@romaenergy.it"
     },
     {
       "id": "22",
@@ -257,11 +298,10 @@
     },
     {
       "id": "32",
-      "name": "Emil AASDSA",
-      "companyId": null,
+      "name": "Emil Larsen",
+      "companyId": 8,
       "position": "Oil Analyst",
-      "contact_email": "emil.larsen@nordicoil.no",
-      "company": "Tech Solutions Ltd."
+      "contact_email": "emil.larsen@nordicoil.no"
     },
     {
       "id": "33",
@@ -320,12 +360,12 @@
       "contact_email": "viktor.pedersen@copenhagenhealth.dk"
     },
     {
-      "id": 36,
-      "name": "A",
-      "company": "Madrid Finance Corp.",
-      "companyId": "4",
-      "position": "A",
-      "contact_email": "pinga.hotmail"
+      "id": "401",
+      "name": "Test",
+      "company": "Test",
+      "companyId": "101",
+      "position": "Test",
+      "contact_email": "Test"
     }
   ]
 }
