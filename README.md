@@ -1,4 +1,4 @@
-# Tech Challenge
+# React project
 
 This is a demonstration project built with **TypeScript** and **React** using **Vite** as the build tool. The project also includes a mock server with **json-server** for development testing.
 
